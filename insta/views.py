@@ -7,4 +7,4 @@ from insta.models import Image
 def home(request):
     posts = Image.objects.all()
 
-    return render(request, 'home.html', {'posts': posts})
+    return render(request, 'base-app/home.html', {'posts': posts})

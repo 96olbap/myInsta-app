@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block styles %} {{ block.super }}
+{% extends 'base-app/base.html' %} {% load static %} {% block styles %} {{ block.super }}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> {% endblock %} {% block content %}
 <div class="container container-fluid">
     {% for post in posts %}
