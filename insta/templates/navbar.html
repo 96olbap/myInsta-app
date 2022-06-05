@@ -11,7 +11,14 @@
     <nav class="navbar sticky-top navbar-expand-lg bg-light py=3">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">myInsta</a>
-
+            <div class="col-sm-4 col-md-4 navbar-right">
+                <form class="d-flex" role="search" action="{% url 'search_results' %}">
+                    <div class="input-group">
+                        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="name">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </nav>
     <hr>

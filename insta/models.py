@@ -40,3 +40,8 @@ class Image(models.Model):
     @classmethod
     def update_caption(cls,id):
         return cls.objects.get(id=id)
+
+    @classmethod
+    def search_image(cls,search_name):
+        images = cls.objects.filter(name__name__icontains=search_name)
+        return images
