@@ -1,6 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block styles %} {{ block.super }}
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> {% endblock %} {% block content %}
 <div class="container container-fluid">
-    <h1>Hello insta!</h1>
+    {% for post in posts %}
+    <img src="{{ post.image.url }}" alt="">
+    <h5>{{ post.caption }}</h5>
+    {% endfor %}
 </div>
 {% endblock %}
