@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg bg-light py=3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'home' %}">myInsta</a>
+            <!-- <div class="col-sm-4 col-md-4 navbar-right">
+                <form class="d-flex" role="search" action="{% url 'search_results' %}">
+                    <div class="input-group">
+                        <input class="form-control me-2" type="text" placeholder="Search Category" aria-label="Search" name="category">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                </form>
+            </div> -->
+        </div>
+    </nav>
+    <a id="intro" href="{% url 'home' %}">
+        <h1 class="text-center">~ Instagram ~</h1>
+    </a>
+    <hr>
+</body>
+
+</html>
