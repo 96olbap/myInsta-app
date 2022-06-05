@@ -2,7 +2,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> {% endblock %} {% block content %}
 <div class="container container-fluid">
     {% for post in posts %}
-    <img src="{{ post.image.url }}" alt="">
+    <img src="{{ post.image.url }}" alt="" class="img-responsive">
     <h5>{{ post.caption }}</h5>
     {% endfor %}
 </div>
