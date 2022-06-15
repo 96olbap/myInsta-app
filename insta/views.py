@@ -11,13 +11,13 @@ def home(request):
 
 def search_results(request):
 
-    if 'name' in request.GET and request.GET["name"]:
-        search_name = request.GET.get("name")
-        searched_images = Image.search_image(search_name)
-        message = f"{search_name}"
+    if 'username' in request.GET and request.GET["username"]:
+        search_term = request.GET.get("username")
+        searched_users = Image.search_username(search_term)
+        message = f"{search_term}"
 
-        return render(request, 'search.html', {"message": message, "posts": searched_images})
+        return render(request, 'base-app/search.html', {"message": message, "posts": searched_users})
 
     else:
-        message = "You have not searched for any post"
-        return render(request, 'search.html', {"message": message})
+        message = "You have not searched for any user"
+        return render(request, 'base-app/search.html', {"message": message})

@@ -42,6 +42,6 @@ class Image(models.Model):
         return cls.objects.get(id=id)
 
     @classmethod
-    def search_image(cls,search_name):
-        images = cls.objects.filter(name__name__icontains=search_name)
-        return images
+    def search_username(cls,search_term):
+        username = cls.objects.filter(name__icontains=search_term)
+        return username

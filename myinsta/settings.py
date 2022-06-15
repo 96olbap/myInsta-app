@@ -37,14 +37,15 @@ MODE=config("MODE", default="dev")
 
 INSTALLED_APPS = [
     'insta',
-    'bootstrap3',
-    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap3',
+    'cloudinary',
+    'django_registration'
 ]
 
 MIDDLEWARE = [
