@@ -45,3 +45,11 @@ class Image(models.Model):
     def search_username(cls,search_term):
         username = cls.objects.filter(name__icontains=search_term)
         return username
+
+class Comment(models.Model):
+    content = models.TextField()
+    post = models.ForeignKey(Image, on_delete=models.CASCADE)
+    posted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.content
