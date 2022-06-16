@@ -9,13 +9,15 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg bg-light py=3">
+    <nav class="navbar sticky-top navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">myInsta</a>
-            <div class="col-sm-4 col-md-4 navbar-right">
+            <div class="col-sm-4 col-md-4">
+                <a class="navbar-brand" href="{% url 'home' %}">myInsta</a>
+            </div>
+            <div class="col-sm-4 col-md-4">
                 <form class="d-flex" role="search" action="{% url 'search_results' %}">
                     <div class="input-group">
-                        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="username">
+                        <input class="form-control me-2" type="text" placeholder="Search username" aria-label="Search" name="username">
                         <button style="text-decoration:none; border-radius: 5px; background: black; color:aliceblue" type="submit"><i class=" material-icons ">search</i></button>
                     </div>
                 </form>
