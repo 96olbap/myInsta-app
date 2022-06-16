@@ -47,4 +47,4 @@ def upload_post(request):
         return redirect('home')
     else:
         form = UploadForm()
-    return render(request, 'upload_post.html', {'form':form})
+    return render(request, 'base-app/upload_post.html', {'form':form})

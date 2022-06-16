@@ -17,4 +17,3 @@ class UploadForm(ModelForm):
     class Meta:
         model = Image
         fields = '__all__'
-        exclude = ['profile', 'user', 'uploaded_at']

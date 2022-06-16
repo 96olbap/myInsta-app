@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     profile_photo = CloudinaryField('profile_photo')
     bio = models.CharField(max_length=60)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name = 'profile',on_delete=models.CASCADE)
 
     def __str__(self):
         return self.bio
@@ -22,7 +22,6 @@ class Image(models.Model):
     name = models.CharField(max_length=30)
     caption = models.TextField()
     profile = models.ForeignKey(Profile,on_delete=models.CASCADE, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
