@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-
 from insta.models import Image
+from django.contrib.auth.decorators import login_required
+
+from .forms import RegisterForm
 
 # Create your views here.
+@login_required(login_url = 'accounts/login/')
 def home(request):
     posts = Image.objects.all()
 
@@ -21,3 +24,13 @@ def search_results(request):
     else:
         message = "You have not searched for any user"
         return render(request, 'base-app/search.html', {"message": message})
+
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = RegisterForm()
+    return render(request, 'registration/register.html', {'form':form})
