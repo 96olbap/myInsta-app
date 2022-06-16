@@ -1,10 +1,11 @@
 {% extends 'base-app/base.html' %} {% load static %} {% block styles %} {{ block.super }}
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> {% endblock %} {% block content %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> {% endblock %} {% block content %}
 <div class="container container-fluid">
     <center>
         <div style="position: relative;">
             {% for post in posts %}
-            <div class="card" style="max-width:fit-content; margin: 5px;">
+            <div class="card" style="width:fit-content; max-width:27rem; margin: 7px; padding: 0;">
                 <div class="card-header">
                     <h5>{{post.name}}</h5>
                 </div>
@@ -12,13 +13,35 @@
                     <img src="{{ post.image.url }}" alt="" class="img-responsive">
                 </div>
                 <div class="card-footer">
-                    <h5>{{post.name}}</h5>
-                    <p>caption: {{ post.caption }}</p>
-                    <p>{{post.uploaded_at}}</p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="like-btn">
+                                <span id="icon"><i class="fa-regular fa-heart"></i></span>
+                                <span id="count">0</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <a href=""><i class="fa-regular fa-comment"></i></a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href=""><i class="fa-regular fa-bookmark"></i></a>
+                        </div>
+                    </div>
+                    <div class="row m">
+                        <h5>{{post.name}}</h5>
+                    </div>
+                    <div class="row">
+                        <p>caption: {{ post.caption }}</p>
+                    </div>
+                    <div class="row">
+                        <p>{{post.uploaded_at}}</p>
+                    </div>
                 </div>
             </div>
             {% endfor %}
         </div>
     </center>
 </div>
+<script src="{% static 'scripts/app.js' %}"></script>
+
 {% endblock %}

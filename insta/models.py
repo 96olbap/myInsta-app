@@ -16,7 +16,7 @@ class Profile(models.Model):
         self.save()
 
     def delete_profile(self):
-        self.delete()
+        self.delete('all')
 class Image(models.Model):
     image = CloudinaryField('image')
     name = models.CharField(max_length=30)
