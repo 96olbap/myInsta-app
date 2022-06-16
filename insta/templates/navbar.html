@@ -18,7 +18,7 @@
         <div>
             {% if user.is_authenticated %}
             <a href="{%url 'home'%}"><i class="material-icons">home</i></a>
-            <a href="{%url 'home'%}"><i class="material-icons">add_box</i></a>
+            <a href="{%url 'upload_post'%}"><i class="material-icons">add_box</i></a>
             <a href="/accounts/profile/"><i class="material-icons">account_circle</i></a>
             <a href="/accounts/password/change"><i class="material-icons">favorite</i></a>
             <a href="accounts/logout/">Logout</a> {% else %}
