@@ -47,7 +47,7 @@ class Image(models.Model):
 
 class Comment(models.Model):
     content = models.TextField()
-    post = models.ForeignKey(Image, on_delete=models.CASCADE)
+    post = models.OneToOneField(Image, related_name='img',on_delete=models.CASCADE)
     posted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

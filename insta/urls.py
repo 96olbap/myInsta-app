@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path(r'^search/', views.search_results, name='search_results'),
     path('register/', views.register, name = 'register'),
-    path('upload_post/', views.upload_post, name = 'upload_post')
+    path('upload_post/', views.upload_post, name = 'upload_post'),
+    path('post_comment/', views.post_comment, name = 'post_comment'),
 ]
