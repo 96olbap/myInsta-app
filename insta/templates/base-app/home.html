@@ -2,10 +2,16 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> {% endblock %} {% block content %}
 <div class="container container-fluid">
     <center>
-        {% for post in posts %}
-        <img src="{{ post.image.url }}" alt="" class="img-responsive">
-        <h5>{{ post.caption }}</h5>
-        {% endfor %}
+        <div style="position: relative;">
+            {% for post in posts %}
+            <img src="{{ post.image.url }}" alt="" class="img-responsive">
+            <div>
+                <h5>{{post.name}}</h5>
+                <p>caption: {{ post.caption }}</p>
+                <p>{{post.uploaded_at}}</p>
+            </div>
+            {% endfor %}
+        </div>
     </center>
 </div>
 {% endblock %}
