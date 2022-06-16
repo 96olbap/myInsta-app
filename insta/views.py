@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from insta.models import Image
 from django.contrib.auth.decorators import login_required
 
-from .forms import RegisterForm
+from .forms import RegisterForm, UploadForm
 
 # Create your views here.
 @login_required(login_url = 'accounts/login/')
@@ -34,3 +34,17 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'registration/register.html', {'form':form})
+
+@login_required(login_url = 'accounts/login/')
+def upload_post(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = UploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.profile = current_user.profile
+            image.save()
+        return redirect('home')
+    else:
+        form = UploadForm()
+    return render(request, 'upload_post.html', {'form':form})
