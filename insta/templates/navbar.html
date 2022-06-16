@@ -17,6 +17,7 @@
                     <img src="{% static 'images/insta_logo_30px.png' %}" alt="Instagram logo">
                 </a>
             </div>
+            <!-- Search form -->
             <div class="col-sm-4 col-md-4">
                 <form class="d-flex" role="search" action="{% url 'search_results' %}">
                     <div class="input-group">
@@ -24,6 +25,16 @@
                         <button style="text-decoration:none; border-radius: 5px; background: black; color:aliceblue" type="submit"><i class=" material-icons ">search</i></button>
                     </div>
                 </form>
+            </div>
+            <!-- End of search form -->
+            <div class="col-sm-6 col-md-6">
+                {% if user.is_authenticated %}
+                <a href="{%url 'home'%}"><i class="material-icons">home</i></a>
+                <a href="{%url 'home'%}"><i class="material-icons">add_box</i></a>
+                <a href="/accounts/password/change"><i class="material-icons">account_circle</i></a>
+                <a href="/accounts/password/change"><i class="material-icons">favorite</i></a>
+                <a href="accounts/logout/">Logout</a> {% else %}
+                <a class='btn btn-default' href="/accounts/login">Login</a> {% endif %}
             </div>
         </div>
     </nav>
